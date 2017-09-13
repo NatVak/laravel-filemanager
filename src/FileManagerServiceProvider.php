@@ -20,8 +20,6 @@ class FileManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        require __DIR__.'/../vendor/autoload.php';
-
         $this->app->register(ImageServiceProvider::class);
         $this->app->register(FacadesServiceProvider::class);
         $this->app->register(ValidatorServiceProvider::class);
