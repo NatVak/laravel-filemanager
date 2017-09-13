@@ -9,11 +9,12 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'main_title' => 'Files Cloud',
 
-    'title' => 'File Manager',
-    
-    'main_folder' => 'Main folder',
+    'title' => 'קבצים',
+
+    'main_folder' => 'תיקייה ראשית',
+
+    'main_title' => 'ענן קבצים',
 
     'browser' => include('browser.php'),
 
