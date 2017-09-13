@@ -2,6 +2,7 @@
 
 namespace Ybaruchel\LaravelFileManager\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Intervention\Image\Facades\Image;
 use Ybaruchel\LaravelFileManager\Models\File;
@@ -12,6 +13,16 @@ use Ybaruchel\LaravelFileManager\Traits\FileManagerTrait;
 class FileManagerController extends Controller
 {
     use FileManagerTrait;
+
+    /**
+     * @var Request
+     */
+    private $request;
+
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
 
     /**
      * Main method for showing view
@@ -29,7 +40,7 @@ class FileManagerController extends Controller
         $files = ($folderId) ? File::where('parent_id', $folderId)->get() : File::whereNull('parent_id')->get();
         $folders = ($folderId) ? Folder::where('parent_id', $folderId)->get() : Folder::whereNull('parent_id')->get();
 
-        return view('admin.file-manager.index')
+        return view('FileManager::file-manager.index')
             ->with('files', $files)
             ->with('popup', $popup)
             ->with('folder', $folder)
@@ -130,10 +141,10 @@ class FileManagerController extends Controller
         $cropName       = $this->request->get('cropName');
         $cropNameExists = array_key_exists($cropName, config('file-manager.custom_crops'));
         if (!$cropName || !$cropNameExists) {
-            return response(trans('admin.file-manager.crop.crop_name_not_found'));
+            return response(trans('file_manager::app.crop.crop_name_not_found'));
         }
         if (!FileFacade::exists(public_path('uploads/original/'.$imagePath))) {
-            return response(trans('admin.file-manager.crop.image_not_found'));
+            return response(trans('file_manager::app.crop.image_not_found'));
         }
 
         $image = Image::make(public_path('uploads/original/'.$imagePath));
@@ -149,20 +160,20 @@ class FileManagerController extends Controller
             if($cropSizes[$cropSize]['width'] > $imgWidth)
             {
                 $cropSizes[$cropSize]['canCrop'] = false;
-                $cropSizes[$cropSize]['error'][] = trans('admin.file-manager.crop.errors.crop_width_wider_than_image_width');
+                $cropSizes[$cropSize]['error'][] = trans('file_manager::app.crop.errors.crop_width_wider_than_image_width');
             }
 
             if($cropSizes[$cropSize]['height'] > $imgHeight)
             {
                 $cropSizes[$cropSize]['canCrop'] = false;
-                $cropSizes[$cropSize]['error'][] = trans('admin.file-manager.crop.errors.crop_height_higher_than_image_height');
+                $cropSizes[$cropSize]['error'][] = trans('file_manager::app.crop.errors.crop_height_higher_than_image_height');
             }
 
             $cropSizes[$cropSize]['fromLeft'] = (($imgWidth - $cropSizes[$cropSize]['width']) / 2);
             $cropSizes[$cropSize]['fromTop']  = (($imgHeight - $cropSizes[$cropSize]['height']) / 2);
         }
 
-        return view('admin.file-manager.crop')
+        return view('FileManager::file-manager.crop')
             ->with('cropName', $cropName)
             ->with('imgWidth', $imgWidth)
             ->with('imgHeight', $imgHeight)
@@ -260,7 +271,7 @@ class FileManagerController extends Controller
         $popup = $this->request->get('popup', false);
         $parentsBreadcrumbs = $this->_formatBreadcrumbs($folder, $popup);
         $popup = $this->request->get('popup', false);
-        return view('admin.file-manager.upload')
+        return view('FileManager::file-manager.upload')
             ->with('popup', $popup)
             ->with('folderId', $folderId)
             ->with('activeSidebar', 'file_manager')
@@ -329,7 +340,7 @@ class FileManagerController extends Controller
 
         Folder::create([
             'parent_id' => ($folderId) ? $folderId : NULL,
-            'name' => trans('admin.file-manager.browser.new_folder')
+            'name' => trans('file_manager::app.browser.new_folder')
         ]);
 
         return back();

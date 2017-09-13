@@ -89,11 +89,11 @@ trait FileManagerTrait
     {
         if ($folder) {
             $parentsBreadcrumbs =array_map(function($p) use ($popup) {
-                return ['title' => $p['name'], 'url' => file_manager_url('admin/file-manager/'.$p['id'])];
+                return ['title' => $p['name'], 'url' => route_with_params('filemanager.main', ['folderId' => $p['id']])];
             }, $folder->getParents() );
             $parentsBreadcrumbs[] = [
                 'title' => $folder->name,
-                'url' => file_manager_url('admin/file-manager/'.$folder->id),
+                'url' => route_with_params('filemanager.main', ['folderId' => $folder->id]),
             ];
         } else {
             $parentsBreadcrumbs = null;
@@ -123,7 +123,7 @@ trait FileManagerTrait
     private function _getTree($foldersId = [], $currentFolder)
     {
         $firstFolders = Folder::whereNull('parent_id')->get();
-        $options = ($currentFolder != 0) ? ['<option value="" disabled selected>'.trans('admin.file-manager.browser.select_folder').'</option><option value="0">'.trans('admin.file-manager.main_folder').'</option>'] : ['<option value="" disabled selected>'.trans('admin.file-manager.browser.select_folder').'</option>'];
+        $options = ($currentFolder != 0) ? ['<option value="" disabled selected>'.trans('file_manager::app.browser.select_folder').'</option><option value="0">'.trans('file_manager::app.main_folder').'</option>'] : ['<option value="" disabled selected>'.trans('file_manager::app.browser.select_folder').'</option>'];
         foreach ($firstFolders as $folder) {
             if (!in_array($folder->id, $foldersId)) {
                 if ($currentFolder != $folder->id) {
