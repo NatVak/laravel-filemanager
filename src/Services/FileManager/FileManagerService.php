@@ -6,6 +6,8 @@ use Ybaruchel\LaravelFileManager\Services\Services;
 
 class FileManagerService extends Services
 {
+    private static $imagesAlts = [];
+
     /**
      * Register the routes for file manager.
      *
@@ -42,5 +44,24 @@ class FileManagerService extends Services
             $router->post('/{folderId?}', 'FileManagerController@post')->name('filemanager.main_post');
             $router->get('/{folderId?}', 'FileManagerController@index')->name('filemanager.main');
         });
+    }
+
+    /**
+     *
+     * For getting image alt by image name
+     *
+     * @param $imageName
+     * @return mixed|null
+     */
+    public static function getImageAlt($imageName)
+    {
+        if(array_get(self::$imagesAlts, $imageName))
+            return self::$imagesAlts[$imageName];
+
+        $img = Cache::remember('alt_image_'.$imageName, 'high', function() use($imageName) {
+            return File::where('path', $imageName)->first();
+        });
+
+        return self::$imagesAlts[$imageName] = ($img ? $img->name : null);
     }
 }
