@@ -295,7 +295,7 @@ class FileManagerController extends Controller
         foreach ($files as $file)
         {
             // Storing file
-            $newPath = $file->store('original');
+            $newPath = $file->store('original', config('file-manager.disk'));
             $newFilename = str_replace('original/', '', $newPath);
 
             if($this->_isImage($file)) {

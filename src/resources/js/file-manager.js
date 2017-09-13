@@ -482,3 +482,37 @@ var FileManagerHelper = {
         return false;
     }
 };
+
+function showToast(message, title, type, options) {
+    var originalOptions = {
+        "closeButton": true,
+        "debug": false,
+        "positionClass": "toast-top-right",
+        "onclick": null,
+        "showDuration": "1000",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+    for(k in originalOptions) {
+        if(!originalOptions.hasOwnProperty(k)) {
+            if(options && options[k]){
+                originalOptions[k] = options[k];
+            }
+        }
+    }
+
+    toastr.options = originalOptions;
+
+    if(!type)
+        type = 'success';
+
+    if(title)
+        toastr[type](message, title);
+    else
+        toastr[type](message);
+}

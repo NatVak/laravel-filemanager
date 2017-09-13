@@ -43,7 +43,7 @@ class FileManagerServiceProvider extends ServiceProvider
     {
         // Config loading
         $configPath = __DIR__ . '/../config/file-manager.php';
-        $this->publishes([$configPath => config_path('file-manager.php')], 'laravel-file-manager-config');
+        $this->publishes([$configPath => config_path('file-manager.php')], 'file-manager-config');
 
         // Translations loading
         $this->loadTranslationsFrom(__DIR__.'/translations', 'file_manager');

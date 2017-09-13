@@ -7,7 +7,7 @@ use \Illuminate\Support\Facades\Facade;
 /**
  * Facade class to be called whenever the class FileManagerService is called
  */
-class FileManagerFacade extends Facade
+class FileManager extends Facade
 {
     /**
      * @return string
