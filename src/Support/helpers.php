@@ -29,7 +29,7 @@ if (! function_exists('route_with_params')) {
      */
     function route_with_params($route, $parameters = [])
     {
-        $parameters = array_merge(request()->input(), $parameters);
+        $parameters = array_merge(request()->all() + ['folderId' => 0], $parameters);
         return route($route, $parameters);
     }
 }

@@ -353,7 +353,7 @@ var FileManagerModal = {
         $(document).on('click', '.fileinput .options .remove-image', function() {
             var fileInput = $(this).parents('.fileinput-new');
             fileInput.find('.file-name-input').val('');
-            fileInput.find('.image-input-placeholder').attr('src', GlobalPath + FileManagerModal.placeholder);
+            fileInput.find('.image-input-placeholder').attr('src', GlobalPublicPath + FileManagerModal.placeholder);
             fileInput.find('.open-file').attr('data-file', '');
             fileInput.find('.crop-image').attr('data-image-path', '');
         });
@@ -370,7 +370,7 @@ var FileManagerModal = {
             var inputId = $(this).parents('.fileinput').data('id');
             data.inputId = inputId;
             var params = $.param(data);
-            var url = route('filemanager.get_selected_options', {folderId: 0}) + '?popup=1&' + params;
+            var url = route('filemanager.upload', {folderId: 0}) + '?popup=1&' + params;
             modal.find('iframe').attr("src", url);
             $('.tooltips').tooltip();
             FileManagerModal.openModal(modal);
@@ -445,7 +445,7 @@ var FileManagerModal = {
                 var file = selectedFiles[0];
                 var inputElement = $('.fileinput[data-id="'+element+'"]');
                 inputElement.find('.image-input-placeholder').attr('src', file.thumbnail);
-                inputElement.find('.open-file').attr('data-file', GlobalPath + '/../uploads/original/' + file.path);
+                inputElement.find('.open-file').attr('data-file', GlobalPublicPath + '/uploads/original/' + file.path);
                 inputElement.find('.crop-image').attr('data-image-path', file.path);
                 inputElement.find('.file-name-input').val(file.path);
             }
@@ -454,7 +454,7 @@ var FileManagerModal = {
                 var file = selectedFiles[i];
                 var new_file_element = $($('.file-multi-container[data-id="'+element+'"]').siblings('#clone_item').clone().html());
                 $(new_file_element).attr('data-id', 'file-manager-' + FileManagerModal.uuid());
-                $(new_file_element).find('.open-file').attr('data-file', GlobalPath + '/../uploads/original/' + file.path);
+                $(new_file_element).find('.open-file').attr('data-file', GlobalPublicPath + '/uploads/original/' + file.path);
                 $(new_file_element).find('.file-name-input').val(file.path);
                 $(new_file_element).find('.crop-image').attr('data-image-path', file.path);
                 $(new_file_element).find('img.image-input-placeholder').attr('src', file.thumbnail);

@@ -69,5 +69,8 @@ Add the crop validation translation to your validation.php translation file:
 'is_croppable' => 'The :attribute is not croppable according to all sizes.',
 ```
 
+Prepare a minimalist layout for popup state, then add it to the file-manager.php config file.
+
+
 * Make sure you choose a disk on the package configuration file - Files will be stored on that disk.
 
