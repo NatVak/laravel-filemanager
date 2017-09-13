@@ -47,9 +47,11 @@ Include the tightenco/ziggy js routes putting the routes generator on your layou
 @routes
 ```
 
-For including the package assets add the next files on your layout template:
+For including the package assets add the next lines to your layout template:
 ```php
 // Inside the <head> tag
+<meta name="csrf-token" content="{{ csrf_token() }}">
+// And
 @include('FileManager::partials.styles')
 
 // Before closing the <body> tag
