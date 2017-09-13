@@ -439,11 +439,11 @@ body {
 }
 
 #file-manager-modal {
-  display: block;
   background: #fff;
   height: 90vh;
   width: 1024px;
   margin: 0 auto;
+  top: 50px;
   .modal-title {
     color: #648aa9;
   }

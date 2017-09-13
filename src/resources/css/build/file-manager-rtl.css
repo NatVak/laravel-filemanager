@@ -471,11 +471,11 @@ body.file-manager-popup .page-content {
 }
 
 #file-manager-modal {
-    display: block;
     background: #fff;
     height: 90vh;
     width: 1024px;
     margin: 0 auto;
+    top: 50px;
 }
 
 #file-manager-modal .modal-title {

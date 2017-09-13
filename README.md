@@ -55,7 +55,13 @@ For including the package assets add the next lines to your layout template:
 @include('FileManager::partials.styles')
 
 // Before closing the <body> tag
+<script>
+    $(function () {
+        FileManagerModal.init();
+    });
+</script>
 @include('FileManager::partials.scripts')
+@include('FileManager::partials.file-manager-modal')
 ```
 
 Add the crop validation translation to your validation.php translation file:
