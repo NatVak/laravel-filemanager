@@ -11,6 +11,11 @@
             "email": "ybaruchel@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Ybaruchel\\LaravelFileManager\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
