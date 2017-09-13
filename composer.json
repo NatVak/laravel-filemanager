@@ -1,0 +1,12 @@
+{
+    "name": "ybaruchel/laravel-filemanager",
+    "require": {
+        "intervention/image": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "Yohanan Baruchel",
+            "email": "ybaruchel@gmail.com"
+        }
+    ]
+}

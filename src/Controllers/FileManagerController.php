@@ -2,12 +2,12 @@
 
 namespace Ybaruchel\LaravelFileManager\Controllers;
 
-//use App\CoreHelpers\CoreFile;
-//use App\Traits\FileManagerTrait;
 use Illuminate\Routing\Controller;
-//use Intervention\Image\Facades\Image;
+use Intervention\Image\Facades\Image;
 use Ybaruchel\LaravelFileManager\Models\File;
 use Ybaruchel\LaravelFileManager\Models\Folder;
+use Illuminate\Support\Facades\File as FileFacade;
+use Ybaruchel\LaravelFileManager\Traits\FileManagerTrait;
 
 class FileManagerController extends Controller
 {
@@ -132,7 +132,7 @@ class FileManagerController extends Controller
         if (!$cropName || !$cropNameExists) {
             return response(trans('admin.file-manager.crop.crop_name_not_found'));
         }
-        if (!CoreFile::exists(public_path('uploads/original/'.$imagePath))) {
+        if (!FileFacade::exists(public_path('uploads/original/'.$imagePath))) {
             return response(trans('admin.file-manager.crop.image_not_found'));
         }
 
@@ -142,7 +142,7 @@ class FileManagerController extends Controller
         $cropSizes = config('file-manager.custom_crops')[$cropName];
         foreach ($cropSizes as $cropSize => $values) {
             $croppedFile = 'uploads/crop/'. remove_extension_from_path($imagePath) . '_' . $cropName . '_' . $cropSize . '.' . get_extension_from_path($imagePath);
-            $cropSizeExists = CoreFile::exists(public_path($croppedFile));
+            $cropSizeExists = FileFacade::exists(public_path($croppedFile));
             $cropSizes[$cropSize]['fileExists'] = ($cropSizeExists) ? true : false;
             $cropSizes[$cropSize]['fileCroppedPath'] = url($croppedFile);
             $cropSizes[$cropSize]['canCrop'] = true;
