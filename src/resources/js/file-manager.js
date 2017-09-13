@@ -296,7 +296,7 @@ var FileManagerBrowse = {
                 }
             });
         } else {
-            if ($('.moveOption #transferToFolder option').size()) {
+            if ($('.moveOption #transferToFolder option').length) {
                 $('.moveOption').show();
             }
             FileManagerBrowse.showOptions(FileManagerBrowse.optionsPlugin);
