@@ -24,10 +24,11 @@ After updating composer, add the ServiceProvider to the providers array in confi
 ```php
 Ybaruchel\LaravelFileManager\FileManagerServiceProvider::class,
 ```
-If you want to use the facade, add this to your facades in app.php:
+If you want to use the facades, add this to your facades in app.php:
 
 ```php
 'FileManager' => Ybaruchel\LaravelFileManager\Support\Facades\FileManager::class,
+'Cropper' => Ybaruchel\LaravelFileManager\Support\Facades\Cropper::class,
 ```
 
 ### Configuration:

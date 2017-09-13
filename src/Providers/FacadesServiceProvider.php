@@ -4,6 +4,7 @@ namespace Ybaruchel\LaravelFileManager\Providers;
 
 use ReflectionClass;
 use Illuminate\Support\ServiceProvider;
+use Ybaruchel\LaravelFileManager\Services\Cropper\CropperService;
 use Ybaruchel\LaravelFileManager\Services\FileManager\FileManagerService;
 
 class FacadesServiceProvider extends ServiceProvider
@@ -15,6 +16,11 @@ class FacadesServiceProvider extends ServiceProvider
     private $services = [
         'fileManager' => [
             'service' => FileManagerService::class,
+            'dependencies' => [
+            ]
+        ],
+        'cropper' => [
+            'service' => CropperService::class,
             'dependencies' => [
             ]
         ],

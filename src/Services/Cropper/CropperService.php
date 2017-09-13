@@ -1,16 +1,10 @@
 <?php
 
-namespace Ybaruchel\LaravelFileManager\Support;
+namespace Ybaruchel\LaravelFileManager\Services\Cropper;
 
-use Intervention\Image\Facades\Image;
+use Ybaruchel\LaravelFileManager\Services\Services;
 
-/**
- * ------------------------
- *|  Cropper Helper Class |
- * ------------------------
- */
-
-class Cropper
+class CropperService extends Services
 {
     /**
      * Method for auto cropping images, this method can receive
