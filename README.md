@@ -30,6 +30,7 @@ If you want to use the facade, add this to your facades in app.php:
 'FileManager' => Ybaruchel\LaravelFileManager\Support\Facades\FileManager::class,
 ```
 
+### Configuration:
 Register package's routes in the routes service provider file:
 ```php
 FileManager::routes();
