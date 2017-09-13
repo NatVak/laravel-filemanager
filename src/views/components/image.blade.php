@@ -26,7 +26,7 @@
                 </ul>
             </div>
             <div class="img-container"></div>
-            <img src="{!! isset($defaultImage) ?  get_file_thumbnail($defaultImage): url("assets/admin/images/placeholder.png") !!}" class="image-input-placeholder">
+            <img src="{!! isset($defaultImage) ?  get_file_thumbnail($defaultImage): route('resources', ['images', 'placeholder.jpg']) !!}" class="image-input-placeholder">
             @if($croppable)
                 <p style="font-size:12px;" class="help-block">Min: {{get_crop_min_sizes($cropName)}}</p>
             @endif
