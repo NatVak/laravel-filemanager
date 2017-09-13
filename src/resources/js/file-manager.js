@@ -516,3 +516,8 @@ function showToast(message, title, type, options) {
     else
         toastr[type](message);
 }
+
+$.ajaxSetup({
+    headers:
+        { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+});
