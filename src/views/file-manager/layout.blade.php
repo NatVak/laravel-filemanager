@@ -4,13 +4,16 @@
     <meta charset="utf-8" />
     <title>{{config('app.name')}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="{{ asset((config('app.direction') == 'rtl') ? 'assets/admin/metronic/css/all-rtl.css' : 'assets/admin/metronic/css/all.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset((config('app.direction') == 'rtl') ? 'assets/admin/css/app-rtl.css' : 'assets/admin/css/app.css') }}" rel="stylesheet" type="text/css" />
+    @include('FileManager::partials.styles')
     <script type="text/javascript">
         var GlobalPath = '{{url('/admin')}}';
     </script>
+    @routes
 </head>
 
 <body class="file-manager-popup">
@@ -25,8 +28,9 @@
 <script src="{{ asset('assets/admin/metronic/js/all.js') }}"></script>
 <script src="{{ asset('assets/admin/metronic/js/custom.js') }}"></script>
 
-<script>
+@include('FileManager::partials.scripts')
 
+<script>
 
     function showToast(message, title, type, options) {
         var originalOptions = {
@@ -66,9 +70,9 @@
 
     $(document).ready(function(){
 
-        App.setGlobalImgPath('/img/');
-
-        App.setAssetsPath('{{url('assets/admin/metronic')}}');
+//        App.setGlobalImgPath('/img/');
+//
+        {{--App.setAssetsPath('{{url('assets/admin/metronic')}}');--}}
 
         @if(session('toastr'))
                 showToast('{{ session('toastr')['message'] }}', {!! isset(session('toastr')['title']) ? "'".session('toastr')['title']."'" : 'false' !!}, {!!isset(session('toastr')['type']) ? "'".session('toastr')['type']."'" : 'false'!!});

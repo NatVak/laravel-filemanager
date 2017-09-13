@@ -6,6 +6,9 @@ use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Collective\Html\FormFacade as Form;
 use Collective\Html\HtmlServiceProvider;
+use Tightenco\Ziggy\ZiggyServiceProvider;
+use Intervention\Image\ImageServiceProvider;
+use Ybaruchel\LaravelFileManager\Providers\FacadesServiceProvider;
 
 class FileManagerServiceProvider extends ServiceProvider
 {
@@ -17,6 +20,10 @@ class FileManagerServiceProvider extends ServiceProvider
     public function register()
     {
         require __DIR__.'/../vendor/autoload.php';
+
+        $this->app->register(ImageServiceProvider::class);
+        $this->app->register(FacadesServiceProvider::class);
+        $this->app->register(ZiggyServiceProvider::class);
 
         $this->loadViewsFrom(__DIR__.'/views', 'FileManager');
 
@@ -43,9 +50,6 @@ class FileManagerServiceProvider extends ServiceProvider
 
         // Migrations loading
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-
-        // Routes loading
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
 
     private function registerDependencies()

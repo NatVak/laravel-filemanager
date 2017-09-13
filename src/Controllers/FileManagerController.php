@@ -288,7 +288,7 @@ class FileManagerController extends Controller
      */
     public function doUpload($folderId = 0)
     {
-        $files = $this->request->file('files');
+        $files = $this->request->file('files') ?: [];
 
         $storedFiles = [];
         // Storing files

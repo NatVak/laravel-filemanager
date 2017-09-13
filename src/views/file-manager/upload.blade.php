@@ -126,7 +126,7 @@
                                 {% } %}
                             </script>
 
-                            <form id="fileupload" action="{{url('/admin/file-manager/'.$folderId.'/do-upload')}}" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
+                            <form id="fileupload" action="{{ route_with_params('filemanager.do_upload', ['folderId' => $folderId])}}" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
                                 <div class="row fileupload-buttonbar">
                                     <div class="col-lg-7">
                                         <span class="btn green fileinput-button"><i class="fa fa-plus"></i><span>{{trans('file_manager::app.upload.buttons.add_files')}}</span><input type="file" @if(request('ismulti') == 'false') name="files[]" @else name="files[]" multiple="" @endif></span>

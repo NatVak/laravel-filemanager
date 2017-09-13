@@ -2,7 +2,8 @@
     "name": "ybaruchel/laravel-filemanager",
     "require": {
         "intervention/image": "^2.4",
-        "laravelcollective/html": "^5.5"
+        "laravelcollective/html": "^5.5",
+        "tightenco/ziggy": "^0.4.1"
     },
     "authors": [
         {
