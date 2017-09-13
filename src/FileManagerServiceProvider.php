@@ -9,6 +9,7 @@ use Collective\Html\HtmlServiceProvider;
 use Tightenco\Ziggy\ZiggyServiceProvider;
 use Intervention\Image\ImageServiceProvider;
 use Ybaruchel\LaravelFileManager\Providers\FacadesServiceProvider;
+use Ybaruchel\LaravelFileManager\Providers\ValidatorServiceProvider;
 
 class FileManagerServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,7 @@ class FileManagerServiceProvider extends ServiceProvider
 
         $this->app->register(ImageServiceProvider::class);
         $this->app->register(FacadesServiceProvider::class);
+        $this->app->register(ValidatorServiceProvider::class);
         $this->app->register(ZiggyServiceProvider::class);
 
         $this->loadViewsFrom(__DIR__.'/views', 'FileManager');

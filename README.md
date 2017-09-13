@@ -56,5 +56,10 @@ For including the package assets add the next files on your layout template:
 @include('FileManager::partials.scripts')
 ```
 
+Add the crop validation translation to your validation.php translation file:
+```php
+'is_croppable' => 'The :attribute is not croppable according to all sizes.',
+```
+
 * Make sure you choose a disk on the package configuration file - Files will be stored on that disk.
 
