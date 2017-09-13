@@ -10,7 +10,7 @@
             "name": "Yohanan Baruchel",
             "email": "ybaruchel@gmail.com"
         }
-    ]
+    ],
     "extra": {
         "laravel": {
             "providers": [
