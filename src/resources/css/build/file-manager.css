@@ -260,9 +260,12 @@ body.file-manager-popup .page-content {
 }
 
 .modImages .items .background .thumbnail .info {
+    display: initial;
     position: absolute;
     left: 7px;
     top: 0px;
+    right: auto;
+    transform: initial;
     padding: 4px 1px 0px 3px;
     background: white;
     border-radius: 50% !important;
@@ -476,6 +479,8 @@ body.file-manager-popup .page-content {
     width: 1024px;
     margin: 0 auto;
     top: 50px;
+    display: none;
+    position: fixed;
 }
 
 #file-manager-modal .modal-title {
