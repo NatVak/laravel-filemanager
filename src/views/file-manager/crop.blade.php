@@ -42,22 +42,22 @@
                     <div class="tab-content">
                         @foreach($cropSizes as $size => $values)
 
-                            @php($maxBoxSize = 250)@endphp
-                            @php($cropSmallImage = [])@endphp
+                            @php $maxBoxSize = 250 @endphp
+                            @php $cropSmallImage = [] @endphp
                             @if($values['height'] > $maxBoxSize || $values['width'] > $maxBoxSize)
                                 @if($values['width'] > $values['height'])
-                                    @php($ratio = $maxBoxSize / $values['width'])@endphp
-                                    @php($cropSmallImage['width'] = $maxBoxSize)@endphp
-                                    @php($cropSmallImage['height'] = $values['height'] * $ratio)@endphp
+                                    @php $ratio = $maxBoxSize / $values['width'] @endphp
+                                    @php $cropSmallImage['width'] = $maxBoxSize @endphp
+                                    @php $cropSmallImage['height'] = $values['height'] * $ratio @endphp
                                 @else
-                                    @php($ratio = $maxBoxSize / $values['height'])@endphp
-                                    @php($cropSmallImage['height'] = $maxBoxSize)@endphp
-                                    @php($cropSmallImage['width'] = $values['width'] * $ratio)@endphp
+                                    @php $ratio = $maxBoxSize / $values['height'] @endphp
+                                    @php $cropSmallImage['height'] = $maxBoxSize @endphp
+                                    @php $cropSmallImage['width'] = $values['width'] * $ratio @endphp
                                 @endif
                             @else
-                                @php($ratio = 1)@endphp
-                                @php($cropSmallImage['width'] = $values['width'])@endphp
-                                @php($cropSmallImage['height'] = $values['height'])@endphp
+                                @php $ratio = 1 @endphp
+                                @php $cropSmallImage['width'] = $values['width'] @endphp
+                                @php $cropSmallImage['height'] = $values['height'] @endphp
                             @endif
 
                             <div  class="tab-pane @if($loop->first) active @endif" id="tab_{{$cropName}}_{{$size}}" style="position:relative;overflow: auto">
