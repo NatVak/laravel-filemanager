@@ -2,6 +2,7 @@
 
 namespace Ybaruchel\LaravelFileManager\Services\Cropper;
 
+use Intervention\Image\Facades\Image;
 use Ybaruchel\LaravelFileManager\Services\Services;
 
 class CropperService extends Services
