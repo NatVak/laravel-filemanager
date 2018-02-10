@@ -1,8 +1,8 @@
 <div class="file-multi-container" data-id="{{uniqid('file-manager-container-')}}">
     <div class="file-multi-options">
-        <button class="upload-files" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"true"' data-fileType='"file"' data-newMinFiles='"{{((isset($minFiles) && $minFiles) ? $minFiles : 1)}}"' data-newMaxFiles='"{{((isset($maxFiles) && $maxFiles) ? $maxFiles : 99999)}}"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>העלה לענן</button>
-        <button class="select-files" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"true"' data-fileType='"file"' data-newMinFiles='"{{((isset($minFiles) && $minFiles) ? $minFiles : 1)}}"' data-newMaxFiles='"{{((isset($maxFiles) && $maxFiles) ? $maxFiles : 99999)}}"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>בחר מהענן</button>
-        <button class="red-button remove-files">נקה הכל</button>
+        <button class="upload-files" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"true"' data-fileType='"file"' data-newMinFiles='"{{((isset($minFiles) && $minFiles) ? $minFiles : 1)}}"' data-newMaxFiles='"{{((isset($maxFiles) && $maxFiles) ? $maxFiles : 99999)}}"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>{{trans('file_manager::app.components.multi.buttons.upload')}}</button>
+        <button class="select-files" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"true"' data-fileType='"file"' data-newMinFiles='"{{((isset($minFiles) && $minFiles) ? $minFiles : 1)}}"' data-newMaxFiles='"{{((isset($maxFiles) && $maxFiles) ? $maxFiles : 99999)}}"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>{{trans('file_manager::app.components.multi.buttons.select')}}</button>
+        <button class="red-button remove-files">{{trans('file_manager::app.components.multi.buttons.remove')}}</button>
     </div>
     <div class="files-containers">
 
@@ -16,16 +16,16 @@
                     <div class="fileinput-new thumbnail">
                         <div class="options">
                             <ul>
-                                <li class="remove-red tooltips remove-image-multi" data-toggle="tooltip" title="הסר" data-placement="bottom">
+                                <li class="remove-red tooltips remove-image-multi" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.remove')}}" data-placement="bottom">
                                     <i class="fa fa-times"></i>
                                 </li>
-                                <li class="tooltips open-file" data-toggle="tooltip" title="פתח" data-file="{{url('uploads/original/'.$defaultFile)}}" data-placement="bottom">
+                                <li class="tooltips open-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.open')}}" data-file="{{url('uploads/original/'.$defaultFile)}}" data-placement="bottom">
                                     <i class="fa fa-external-link" aria-hidden="true"></i>
                                 </li>
-                                <li class="tooltips select-file" data-toggle="tooltip" title="בחר" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                                <li class="tooltips select-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.select')}}" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                                     <i class="fa fa-cloud" aria-hidden="true"></i>
                                 </li>
-                                <li class="tooltips upload-file" data-toggle="tooltip" title="העלה" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                                <li class="tooltips upload-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.upload')}}" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                                     <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                                 </li>
                             </ul>
@@ -52,16 +52,16 @@
         <div class="fileinput-new thumbnail multi">
             <div class="options">
                 <ul>
-                    <li class="remove-red tooltips remove-image-multi" data-toggle="tooltip" title="הסר" data-placement="bottom">
+                    <li class="remove-red tooltips remove-image-multi" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.remove')}}" data-placement="bottom">
                         <i class="fa fa-times"></i>
                     </li>
-                    <li class="tooltips open-file" data-toggle="tooltip" title="פתח" data-file="__FILE_PATH__" data-placement="bottom">
+                    <li class="tooltips open-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.open')}}" data-file="__FILE_PATH__" data-placement="bottom">
                         <i class="fa fa-external-link" aria-hidden="true"></i>
                     </li>
-                    <li class="tooltips select-file" data-toggle="tooltip" title="בחר" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                    <li class="tooltips select-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.select')}}" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                         <i class="fa fa-cloud" aria-hidden="true"></i>
                     </li>
-                    <li class="tooltips upload-file" data-toggle="tooltip" title="העלה" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                    <li class="tooltips upload-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.upload')}}" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"file"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                     </li>
                 </ul>

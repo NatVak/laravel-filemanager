@@ -19,10 +19,14 @@ return [
 
     'multi' => [
         'buttons' => [
-            'select' => 'בחר :type',
-            'upload' => 'העלה :type',
-            'remove' => 'הסר :type'
-        ]
-    ]
+			'remove' => 'הסר הכל',
+			'select' => 'בחר מהענן',
+			'upload' => 'העלה לענן',
+        ],
+    ],
+
+	'info' => [
+		'min_image_size' => 'מינימום:'
+	]
 
 ];

@@ -6,20 +6,20 @@
         <div class="fileinput-new thumbnail">
             <div class="options">
                 <ul>
-                    <li class="remove-red tooltips remove-image" data-toggle="tooltip" title="Remove" data-placement="bottom">
+                    <li class="remove-red tooltips remove-image" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.remove')}}" data-placement="bottom">
                         <i class="fa fa-times"></i>
                     </li>
-                    <li class="tooltips open-file" data-toggle="tooltip" title="Open" data-file="{!! isset($defaultImage) ?  url('uploads/original/'.$defaultImage) : url("assets/admin/images/placeholder.png") !!}" data-placement="bottom">
+                    <li class="tooltips open-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.open')}}" data-file="{!! isset($defaultImage) ?  url('uploads/original/'.$defaultImage) : url("assets/admin/images/placeholder.png") !!}" data-placement="bottom">
                         <i class="fa fa-external-link" aria-hidden="true"></i>
                     </li>
-                    <li class="tooltips select-file" data-toggle="tooltip" title="Choose" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"image"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                    <li class="tooltips select-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.select')}}" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"image"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                         <i class="fa fa-cloud" aria-hidden="true"></i>
                     </li>
-                    <li class="tooltips upload-file" data-toggle="tooltip" title="Upload" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"image"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
+                    <li class="tooltips upload-file" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.upload')}}" data-placement="bottom" @if($maxFileSize) data-maxfilesize="'{{$maxFileSize}}'" @endif  data-placement="bottom" data-isMulti='"false"' data-fileType='"image"' data-newMinFiles='"1"' data-newMaxFiles='"1"' data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif >
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                     </li>
                     @if($croppable)
-                        <li class="tooltips crop-image" data-toggle="tooltip" title="Crop" @if(isset($defaultImage)) data-image-path="{{$defaultImage}}" @endif data-placement="bottom" @if(isset($cropName)) data-crop-name="{{$cropName}}" @endif data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>
+                        <li class="tooltips crop-image" data-toggle="tooltip" title="{{trans('file_manager::app.components.tooltips.crop')}}" @if(isset($defaultImage)) data-image-path="{{$defaultImage}}" @endif data-placement="bottom" @if(isset($cropName)) data-crop-name="{{$cropName}}" @endif data-allowed-extensions="{{implode(',', $allowedExtensions)}}" @if(isset($attributes)) {{ implode(' ', $attributes) }} @endif>
                             <i class="fa fa-crop" aria-hidden="true"></i>
                         </li>
                     @endif
