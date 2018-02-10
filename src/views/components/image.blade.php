@@ -28,7 +28,7 @@
             <div class="img-container"></div>
             <img src="{!! isset($defaultImage) ?  get_file_thumbnail($defaultImage): route('resources', ['images', 'placeholder.jpg']) !!}" class="image-input-placeholder">
             @if($croppable)
-                <p style="font-size:12px;" class="help-block">Min: {{get_crop_min_sizes($cropName)}}</p>
+                <p style="font-size:12px;" class="help-block">{{trans('file_manager::app.components.info.min_image_size')}} {{get_crop_min_sizes($cropName)}}</p>
             @endif
             <input type="hidden" name="{{$name}}" class="file-name-input" value="{{isset($defaultImage) ? $defaultImage : ''}}">
             @if(isset($fields))
