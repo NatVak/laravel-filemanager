@@ -30,8 +30,6 @@ class FileManagerServiceProvider extends ServiceProvider
         $this->registerHelpers();
 
         $this->registerDependencies();
-
-        $this->registerFormComponents();
     }
 
     /**
@@ -50,6 +48,8 @@ class FileManagerServiceProvider extends ServiceProvider
 
         // Migrations loading
         $this->loadMigrationsFrom(__DIR__.'/migrations');
+        
+        $this->registerFormComponents();
     }
 
     private function registerDependencies()
