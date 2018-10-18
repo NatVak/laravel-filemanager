@@ -29,16 +29,16 @@ return [
     'choose_file' => 'Choose file',
 
     'actions' => [
-        'display' => 'פעולות',
-        'check_all' => 'בחר הכל',
-        'uncheck_all' => 'בטל הכל',
-        'selected' => 'פריטים נבחרו',
+        'display' => 'Actions',
+        'check_all' => 'Check all',
+        'uncheck_all' => 'Uncheck all',
+        'selected' => 'Items selected',
         'remove' => [
-            'display' => 'מחק',
-            'are_you_sure' => 'האם אתה בטוח?'
+            'display' => 'Remove',
+            'are_you_sure' => 'Are you sure?'
         ],
-        'or' => 'או',
-        'move' => 'העבר',
+        'or' => 'or',
+        'move' => 'Move',
     ],
 
     'images' => 'תמונות',
@@ -46,17 +46,17 @@ return [
     'image' => 'תמונה',
     'file'  => 'קובץ',
 
-    'select_options_from' => 'הנך יכול לבחור בין: ',
-    'select_options_to' => ' ו- ',
+    'select_options_from' => 'Select options from:',
+    'select_options_to' => ' to ',
 
     'details' => [
-        'date' => 'תאריך: ',
-        'hour' => 'שעה: ',
-        'size' => 'גודל: ',
+        'date' => 'Date: ',
+        'hour' => 'Hour: ',
+        'size' => 'Size: ',
     ],
 
-    'add_to_page' => 'הוסף לעמוד',
+    'add_to_page' => 'Add to page',
 
-    'new_folder' => 'תיקייה חדשה'
+    'new_folder' => 'New folder'
 
 ];

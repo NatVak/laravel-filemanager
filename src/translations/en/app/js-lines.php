@@ -10,15 +10,15 @@ return [
     */
     'messages' => [
         'success' => [
-            'title' => 'הודעה',
-            'message' => 'השינויים נשמרו בהצלחה',
+            'title' => 'Message',
+            'message' => 'Changes were saved successfully',
         ]
     ],
 
     'upload' => [
         'limit' => [
-            'message' => 'הנך יכול לבחור עד ',
-            'files' => ' קבצים.',
+            'message' => 'You can choose not more than ',
+            'files' => ' files.',
         ]
     ]
 ];

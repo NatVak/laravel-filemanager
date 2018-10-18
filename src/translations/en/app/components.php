@@ -10,23 +10,23 @@ return [
     */
 
     'tooltips' => [
-        'remove' => 'הסר',
-        'open' => 'פתח',
-        'select' => 'בחר',
-        'upload' => 'העלה',
-        'crop' => 'חתוך'
+        'remove' => 'Remove',
+        'open' => 'Open',
+        'select' => 'Select',
+        'upload' => 'Upload',
+        'crop' => 'Crop'
     ],
 
     'multi' => [
         'buttons' => [
-			'remove' => 'הסר הכל',
-			'select' => 'בחר מהענן',
-			'upload' => 'העלה לענן',
+			'remove' => 'Remove all',
+			'select' => 'Select',
+			'upload' => 'Upload to storage',
         ],
     ],
 
 	'info' => [
-		'min_image_size' => 'מינימום:'
+		'min_image_size' => 'min:'
 	]
 
 ];

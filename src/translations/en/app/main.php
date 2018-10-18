@@ -10,11 +10,11 @@ return [
     */
 
 
-    'title' => 'קבצים',
+    'title' => 'Files',
 
-    'main_folder' => 'תיקייה ראשית',
+    'main_folder' => 'Main folder',
 
-    'main_title' => 'ענן קבצים',
+    'main_title' => 'Cloud file storage',
 
     'browser' => include('browser.php'),
 

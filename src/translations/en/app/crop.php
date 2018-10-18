@@ -9,27 +9,27 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'crop_name_not_found' => 'סוג החיתוך לא נמצא',
+    'crop_name_not_found' => 'Crop name is not found',
 
-    'image_not_found' => 'שגיאה: התמונה לא נמצאה',
+    'image_not_found' => 'Error: the image is not found',
 
     'errors' => [
-        'crop_width_wider_than_image_width' => 'רוחב החיתוך גדול מרוחב התמונה',
-        'crop_height_higher_than_image_height' => 'גובה החיתוך גדול מגובה התמונה',
+        'crop_width_wider_than_image_width' => 'Crop width is wider than image width',
+        'crop_height_higher_than_image_height' => 'Crop height is higher than image height',
     ],
 
     'buttons' => [
-        'save' => 'שמור שינויים'
+        'save' => 'Save'
     ],
 
     'messages' => [
         'success' => [
-            'title' => 'הודעה',
-            'message' => 'השינויים נשמרו בהצלחה'
+            'title' => 'Message',
+            'message' => 'Changes were saved successfully'
         ],
         'error' => [
-            'title' => 'שגיאה',
-            'message' => 'שגיאה בעת שמירת הנתונים'
+            'title' => 'Error',
+            'message' => 'Error appeared when saving the image'
         ]
     ]
 
