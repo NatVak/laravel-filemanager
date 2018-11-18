@@ -41,10 +41,10 @@ return [
         'move' => 'Move',
     ],
 
-    'images' => 'תמונות',
-    'files'  => 'קבצים',
-    'image' => 'תמונה',
-    'file'  => 'קובץ',
+    'images' => 'images',
+    'files'  => 'files',
+    'image' => 'image',
+    'file'  => 'file',
 
     'select_options_from' => 'Select options from:',
     'select_options_to' => ' to ',
@@ -58,5 +58,4 @@ return [
     'add_to_page' => 'Add to page',
 
     'new_folder' => 'New folder'
-
 ];

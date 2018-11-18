@@ -28,5 +28,4 @@ return [
 	'info' => [
 		'min_image_size' => 'min:'
 	]
-
 ];
