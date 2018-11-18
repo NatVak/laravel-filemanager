@@ -32,5 +32,4 @@ return [
             'message' => 'Error appeared when saving the image'
         ]
     ]
-
 ];
