@@ -1,3 +1,20 @@
+# Edited by Nati
+
+#Comments
+
+As you'll read this is a deprecated library so we just make it work.
+we added metronic CSS file to this package.
+in order to upload files successfully you should do two things:
+
+1) Create an `upload` folder in your public directory.
+2) If you like to use `rtl` direction please make an entry in your `app.php` config file like so:
+`'direction' => 'rtl'`
+
+Good advice: add `/public/uploads/*` to your `.gitignore`
+
+Good Luck!!!
+
+
 # Laravel 5 FileManager - Deprecated!
 
 
