@@ -40,7 +40,9 @@
                         </li>
                         <li class="buttons">
                             <a href="{{route_with_params('filemanager.upload', ['folderId' => $folderId])}}" class="btn blue" type="button"><i class="fa fa-cloud-upload" aria-hidden="true"></i> {{trans('file_manager::app.browser.buttons.upload_files')}}</a>
-                            <a href="{{route_with_params('filemanager.add_folder', ['folderId' => $folderId])}}" class="btn blue" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{trans('file_manager::app.browser.buttons.add_folder')}}</a>
+                            @if (!$folderId || config('file.manager.allow-sub-dir'))
+                                <a href="{{route_with_params('filemanager.add_folder', ['folderId' => $folderId])}}" class="btn blue" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{trans('file_manager::app.browser.buttons.add_folder')}}</a>
+                            @endif
                         </li>
                     </ul>
                 </div>
