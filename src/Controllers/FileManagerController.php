@@ -105,8 +105,9 @@ class FileManagerController extends Controller
         $itemID = $this->request->get('itemID', false);
         $itemType = $this->request->get('itemType', false);
         $itemName = $this->request->get('itemName', false);
+        $itemFolderDate = $this->request->get('itemFolderDate', $itemType == 'folder' ? null : true);
 
-        if(!$itemID || !$itemType || !$itemName)
+        if(!$itemID || !$itemType || (!$itemName && !$itemFolderDate))
             return response()->json('error', 200);
 
         switch($itemType) {
@@ -125,7 +126,8 @@ class FileManagerController extends Controller
             return response()->json('error', 200);
 
         $model->update([
-            'name' => $itemName
+            'name' => $itemName,
+            'folder_date' => $itemFolderDate
         ]);
     }
 

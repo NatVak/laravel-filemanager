@@ -17,6 +17,7 @@ class CreateFoldersTable extends Migration {
 			$table->increments('id');
 			$table->integer('parent_id')->unsigned()->nullable()->index('folders_parent_id_foreign');
 			$table->string('name');
+			$table>date('folder_date');
 			$table->softDeletes();
 			$table->timestamps();
 		});
