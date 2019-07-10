@@ -121,6 +121,43 @@ var FileManagerBrowse = {
                 e.preventDefault();
             }
         });;
+        $(".inputEditFolderDate").blur(function() {
+            editableText = $(this);
+            itemType = editableText.parent().find('.itemType').val();
+            itemID = editableText.parent().find('.itemID').val();
+            itemName = editableText.val();
+            infoText = editableText.parents('.file-manager-item').find('.info_open .text .infoName');
+            infoText.text(itemName);
+            $.ajax({
+                url: route('filemanager.rename'),
+                type: "POST",
+                data: 'itemType='+itemType+'&itemID='+itemID+'&itemName='+itemName,
+                dataType: 'html',
+                beforeSend: function() {
+                    editableText.prop('disabled', true);
+                    editableText.addClass("disableInput");
+                },
+                complete: function() {
+                    editableText.prop('disabled', false);
+                    editableText.removeClass("disableInput");
+                },
+                success: function(response) {
+                    if (response == 'error') {
+                        editableText.css("border", '1px solid red');
+                    }
+                    if (itemType == 'folder') {
+                        FileManagerBrowse.refreshActionsActs(FileManagerBrowse.optionsPlugin, true);
+                    }
+                    var successMessage = FileManagerBrowse.translations.messages.success.message;
+                    var successTitle = FileManagerBrowse.translations.messages.success.title;
+                    showToast(successMessage, successTitle, 'success');
+                }
+            });
+        }).keydown(function(e){
+            if (e.keyCode == 13) {
+                e.preventDefault();
+            }
+        });;
         //Search button clicked
         $('#stringSearch').keyup(function(e) {
             e.preventDefault();

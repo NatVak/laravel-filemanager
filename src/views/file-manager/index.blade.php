@@ -128,6 +128,7 @@
                                                 <input type="hidden" name="itemID[]"  class="itemID" value="{{$folder->id}}" />
                                                 <input type="hidden" name="checkedItems[]"  class="checkedFiles" value="0" />
                                                 <input type="text" name="itemName" autocomplete="off" value="{{$folder->name}}" class="inputEditName" />
+                                                <input type="date" name="folder_date" autocomplete="off" value="{{$folder->folder_date}}" class="inputEditFolderDate" />
                                                 <input type="hidden" name="typeFileIsOk[]" class="typeFileIsOk" value="0" />
                                                 <span style="display:none;"><img /></span>
                                                 <span class="checkbox"></span>

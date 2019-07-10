@@ -18,6 +18,7 @@ class Folder extends Model
     protected $fillable = [
         'parent_id',
         'name',
+        'folder_date'
     ];
 
     protected static function boot()
