@@ -105,9 +105,13 @@ class FileManagerController extends Controller
         $itemID = $this->request->get('itemID', false);
         $itemType = $this->request->get('itemType', false);
         $itemName = $this->request->get('itemName', false);
-        $itemFolderDate = $this->request->get('itemFolderDate', $itemType == 'folder' ? false : true);
+        $itemFolderDate = $this->request->get('itemFolderDate', false);
 
-        if(!$itemID || !$itemType || (!$itemName && $itemFolderDate))
+        if ($itemFolderDate)
+        {
+            Folder::where('id', $itemID)->update(['folder_date' => $itemFolderDate]);
+        }
+        if(!$itemID || !$itemType || !$itemName)
             return response()->json('error', 200);
 
         switch($itemType) {
@@ -127,7 +131,6 @@ class FileManagerController extends Controller
 
         $model->update([
             'name' => $itemName,
-            'folder_date' => $itemFolderDate
         ]);
     }
 

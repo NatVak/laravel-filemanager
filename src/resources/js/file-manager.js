@@ -131,7 +131,7 @@ var FileManagerBrowse = {
             $.ajax({
                 url: route('filemanager.rename'),
                 type: "POST",
-                data: 'itemType='+itemType+'&itemID='+itemID+'&itemName='+itemName,
+                data: 'itemType='+itemType+'&itemID='+itemID+'&itemFolderDate='+itemName,
                 dataType: 'html',
                 beforeSend: function() {
                     editableText.prop('disabled', true);
