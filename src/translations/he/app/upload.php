@@ -24,7 +24,7 @@ return [
 
     'instructions' => [
         'title' => 'הוראות',
-        'max_file_size_is' => 'הגודל המקבימלי לקובץ הינו: ',
+        'max_file_size_is' => 'הגודל המקסימלי לקובץ הינו: ',
         'allowed_file_extensions_are' => 'סוגי הקבצים המותרים הינם: ',
         'on_upload_x_crops_are_saved' => 'בהעלאת תמונה, התמונה תישמר בגודל הבא|בהעלאת תמונה, התמונה תישמר ב:number גדלים',
         'crops' => [

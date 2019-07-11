@@ -158,7 +158,7 @@
                                     <ul>
                                         <li><span>{{trans('file_manager::app.upload.instructions.max_file_size_is')}}</span> @if($popup && request('maxfilesize') != '') {{(round(request('maxfilesize') / 1000000)) . 'MB'}} @else {{config('file-manager.max_file_size') . 'MB'}} @endif </li>
                                         <li><span>{{trans('file_manager::app.upload.instructions.allowed_file_extensions_are')}}</span> @if($popup && request('allowedExtensions') != '') {{request('allowedExtensions')}} @else {{implode(config('file-manager.allowed_extensions'), ', ')}} @endif</li>
-                                        <li><span>{{trans_choice('admin.file-manager.upload.instructions.on_upload_x_crops_are_saved', count(config('file-manager.crop')) + 1, ['number' => count(config('file-manager.crop')) + 1])}}</span><br />
+                                        <li><span>{{trans_choice('file_manager::app.upload.instructions.on_upload_x_crops_are_saved', count(config('file-manager.crop')) + 1, ['number' => count(config('file-manager.crop')) + 1])}}</span><br />
                                              <ol>
                                                  <li>{{trans('file_manager::app.upload.instructions.crops.original')}}</li>
                                                  @foreach(config('file-manager.crop') as $size => $values)
