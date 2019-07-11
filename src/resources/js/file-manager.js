@@ -97,12 +97,12 @@ var FileManagerBrowse = {
                 data: 'itemType='+itemType+'&itemID='+itemID+'&itemName='+itemName,
                 dataType: 'html',
                 beforeSend: function() {
-                    editableText.prop('disabled', true);
-                    editableText.addClass("disableInput");
+                   // editableText.prop('disabled', true);
+                    //editableText.addClass("disableInput");
                 },
                 complete: function() {
-                    editableText.prop('disabled', false);
-                    editableText.removeClass("disableInput");
+                   // editableText.prop('disabled', false);
+                  //  editableText.removeClass("disableInput");
                 },
                 success: function(response) {
                     if (response == 'error') {
@@ -134,12 +134,12 @@ var FileManagerBrowse = {
                 data: 'itemType='+itemType+'&itemID='+itemID+'&itemFolderDate='+itemName,
                 dataType: 'html',
                 beforeSend: function() {
-                    editableText.prop('disabled', true);
-                    editableText.addClass("disableInput");
+                   // editableText.prop('disabled', true);
+                  //  editableText.addClass("disableInput");
                 },
                 complete: function() {
-                    editableText.prop('disabled', false);
-                    editableText.removeClass("disableInput");
+                 //   editableText.prop('disabled', false);
+                   // editableText.removeClass("disableInput");
                 },
                 success: function(response) {
                     if (response == 'error') {
