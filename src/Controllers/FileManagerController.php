@@ -37,7 +37,7 @@ class FileManagerController extends Controller
         $popup = $this->request->get('popup', false);
         $selectOptions = $this->_getTree([], $folderId);
         $parentsBreadcrumbs = $this->_formatBreadcrumbs($folder, $popup);
-        $files = ($folderId) ? File::where('parent_id', $folderId)->get() : File::whereNull('parent_id')->get();
+        $files = ($folderId) ? File::orderBy('is_main', 'desc')->where('parent_id', $folderId)->get() : File::whereNull('parent_id')->get();
         $folders = ($folderId) ? Folder::where('parent_id', $folderId)->get() : Folder::whereNull('parent_id')->get();
 
         return view('FileManager::file-manager.index')
@@ -368,6 +368,7 @@ class FileManagerController extends Controller
     public function markAsMain() {
         $image_id = $this->request->get('image_id');
         $parent_id = $this->request->get('parent_id');
+
         File::where('parent_id', $parent_id)->where('is_main', 1)->update(['is_main' => 0]);
         File::where('id', $image_id)->update(['is_main' => 1]);
     }
