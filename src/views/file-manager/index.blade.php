@@ -168,6 +168,10 @@
 
                                                 <input type="hidden" name="typeFileIsOk[]" class="typeFileIsOk" value="{{file_manager_check_file($file->extension, $file->size)}}" />
                                             </div>
+                                            <div class="options" style="clear:both;">
+                                            <input type="radio" name="main" class="mark_as_main" {{$file->is_main ? 'checked' : ''}}value="{{$file->id}}" data-parent-id="{{$file->parent_id}}">
+                                                סמן כתמונה ראשית
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -205,4 +209,9 @@
     @endif
     var translations = {!! json_encode(trans('file_manager::app.js_lines')) !!};
     FileManagerBrowse.init(currentFolder, popupOptions, translations);
+    $('.mark_as_main').on('change', function () {
+        if (!this.checked) return;
+        const parent_id = $(this).data('parent-id');
+        $.getJSON('{{route_with_params('filemanager.mark_as_main')}}'+`?image_id=${this.value}&parent_id=${parent_id}`);
+    });
 @endpush

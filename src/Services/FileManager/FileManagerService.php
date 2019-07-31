@@ -41,6 +41,7 @@ class FileManagerService extends Services
             $router->post('{folderId?}/do-upload', 'FileManagerController@doUpload')->name('filemanager.do_upload');
             $router->get('{folderId?}/add-folder', 'FileManagerController@addFolder')->name('filemanager.add_folder');
             $router->post('get-select-options', 'FileManagerController@getSelectOptions')->name('filemanager.get_selected_options');
+            $router->get('mark-as-main', 'FileManagerController@markAsMain')->name('filemanager.mark_as_main');
             $router->post('/{folderId?}', 'FileManagerController@post')->name('filemanager.main_post');
             $router->get('/{folderId?}', 'FileManagerController@index')->name('filemanager.main');
         });

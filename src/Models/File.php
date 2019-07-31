@@ -23,7 +23,8 @@ class File extends Model
         'path',
         'extension',
         'size',
-        'type'
+        'type',
+        'is_main'
     ];
 
     protected static function boot() {

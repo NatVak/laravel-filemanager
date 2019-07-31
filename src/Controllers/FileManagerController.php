@@ -364,4 +364,11 @@ class FileManagerController extends Controller
         $currentFolder = $this->request->get('currentFolder');
         return response()->json($this->_getTree($foldersId, $currentFolder));
     }
+
+    public function markAsMain() {
+        $image_id = $this->request->get('image_id');
+        $parent_id = $this->request->get('parent_id');
+        File::where('parent_id', $parent_id)->where('is_main', 1)->update(['is_main' => 0]);
+        File::where('id', $image_id)->update(['is_main' => 1]);
+    }
 }
